@@ -1,0 +1,27 @@
+<%=form_with model: @article,local:true do |form| %>
+<% if @article.errors.any?  %>
+    <div id="error_explanation">
+      <%= pluralize(@article.errors.count,'error') %>被禁止保存文章:
+      <% @article.errors.full_messages.each do |msg|%>
+          <ul>
+            <li><%= msg %></li>
+          </ul>
+          </div>
+      <% end  %>
+<% end %>
+
+<p>
+  <%= form.label :标题 %>
+  <%= form.text_field :title %>
+</p>
+<p>
+  <%= form.label :内容 %>
+  <%= form.text_area :text %>
+</p>
+
+    <p>
+      <%= form.submit %>
+    </p>
+
+
+<% end   %>

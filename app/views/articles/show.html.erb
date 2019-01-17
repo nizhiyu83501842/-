@@ -1,0 +1,28 @@
+<%= link_to '返回书单首页', articles_path %>
+
+<p>
+<h2>标题</h2><br>
+<%= @article.title %>
+</p>
+
+<p>
+<h2>内容</h2><br>
+<%= @article.text %>
+</p>
+<p> ---------------------------------</p>
+<p>
+  <!--评论视图集合-->
+<h1>评论区:</h1>
+</p>
+<p>
+  <%= render @article.comments%>
+</p>
+
+<p> ---------------------------------</p>
+<!--添加评论视图表单-->
+<h1> 添加评论:</h1><br>
+<p>
+  <%= render 'comments/commentform' %>
+</p>
+<%= link_to '修改文章', edit_article_path(@article) %> |
+<%= link_to '返回书单首页', articles_path %>

@@ -1,0 +1,12 @@
+<% @article.comments.each do |cmt| %>
+
+
+    <strong>评论人:</strong>
+    <%= cmt.commenter %>
+    <strong>评论内容:</strong>
+    <%= cmt.body %>
+      <%= link_to '删除评论',article_comment_path(article_id:cmt.article, id:cmt),
+                  method: :delete,
+                  data:{confirm:'确定删除吗?'}%><br>
+
+<% end %>
